@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bárbara Medeiros | Data Analytics Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #2b2b2b;
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 80px 10%;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 90vh;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f4f4f4;
+      color: #555;
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 24px;
+      width: fit-content;
+    }
+
+    h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      max-width: 850px;
+      color: #111;
+      margin-bottom: 24px;
+    }
+
+    .highlight {
+      color: #5f7cff;
+    }
+
+    .hero-text {
+      max-width: 760px;
+      font-size: 20px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #111;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #333;
+    }
+
+    .btn-secondary {
+      background: #f4f4f4;
+      color: #111;
+    }
+
+    .btn-secondary:hover {
+      background: #e7e7e7;
+    }
+
+    section {
+      padding: 90px 10%;
+    }
+
+    .section-title {
+      font-size: 38px;
+      margin-bottom: 18px;
+      color: #111;
+    }
+
+    .section-subtitle {
+      color: #666;
+      max-width: 760px;
+      margin-bottom: 48px;
+      font-size: 18px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .card {
+      background: #fafafa;
+      border: 1px solid #efefef;
+      border-radius: 24px;
+      padding: 32px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      margin-bottom: 16px;
+      color: #111;
+    }
+
+    .card p {
+      color: #666;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .skill {
+      background: #f3f5ff;
+      color: #4258d0;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+    }
+
+    .project-card {
+      background: white;
+      border: 1px solid #ececec;
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.06);
+    }
+
+    .project-image {
+      height: 220px;
+      background: linear-gradient(135deg, #f4f7ff, #e7ecff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      color: #4258d0;
+      font-weight: 700;
+    }
+
+    .project-content {
+      padding: 28px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 14px;
+      color: #111;
+    }
+
+    .project-content p {
+      color: #666;
+      margin-bottom: 18px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .project-tag {
+      background: #f4f4f4;
+      color: #555;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .timeline-item {
+      padding: 28px;
+      border-left: 4px solid #5f7cff;
+      background: #fafafa;
+      border-radius: 0 18px 18px 0;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 8px;
+    }
+
+    .timeline-item span {
+      color: #777;
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 60px 10%;
+      text-align: center;
+      border-top: 1px solid #efefef;
+      color: #666;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .contact-links a {
+      text-decoration: none;
+      color: #4258d0;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 42px;
+      }
+
+      .hero-text {
+        font-size: 18px;
+      }
+
+      section,
+      header {
+        padding: 70px 8%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="tag">Portfolio • Bárbara Medeiros</div>
+
+    <h1>
+      Transformando dados em <span class="highlight">decisões</span> através de visualizações inteligentes.
+    </h1>
+
+    <p class="hero-text">
+      Eu sou Bárbara Medeiros, analista de dados com forte atuação em visualização de dados e construção de dashboards no Power BI/Looker. Minha experiência une análise, negócios e comunicação para gerar confiança e suporte à tomada de decisão.
+    </p>
+
+    <div class="buttons">
+      <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+      <a href="#contato" class="btn btn-secondary">Entrar em contato</a>
+    </div>
+  </header>
+
+  <section id="sobre">
+    <h2 class="section-title">Sobre mim</h2>
+
+    <p class="section-subtitle">
+      Na minha trajetória consegui unir análise de dados, comunicação e entendimento profundo de processos financeiros. Ao longo da carreira, desenvolvi soluções orientadas a dados para transformar informações complexas em insights claros.
+    </p>
+
+    <div class="about-grid">
+      <div class="card">
+        <h3>Visualização de Dados</h3>
+        <p>
+          Experiência em Power BI e Linguagem DAX com foco em dashboards executivos, storytelling com dados e construção de indicadores importantes para as regras de negócios da empresa.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Análise Gerencial</h3>
+        <p>
+          Experiência em análises, indicadores financeiros, operações e tomada de decisão orientada por dados.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Comunicação & Negócios</h3>
+        <p>
+          Capacidade de traduzir dados técnicos em informações acessíveis para diretoria, times operacionais e stakeholders.
+        </p>
+      </div>
+    </div>
+
+    <div class="skills">
+      <div class="skill">Power BI</div>
+      <div class="skill">SQL</div>
+      <div class="skill">Python</div>
+      <div class="skill">Data Visualization</div>
+      <div class="skill">Storytelling</div>
+      <div class="skill">Business Intelligence</div>
+      <div class="skill">Looker</div>
+      <div class="skill">Dashboards Executivos</div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <h2 class="section-title">Projetos em destaque</h2>
+
+    <p class="section-subtitle">
+      Aqui estão alguns projetos que pude atuar nos meus 4 anos de experiência em Dados.
+    </p>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-image">Power BI Dashboard</div>
+
+        <div class="project-content">
+          <h3>Painel Operacional - Atingimento de Metas </h3>
+
+          <p>
+            Desenvolvimento de dashboards para monitoramento do alcance de metas e análise de performances do time de operação de Crédito na Stone.
+          </p>
+
+          <div class="project-tags">
+            <div class="project-tag">Power BI</div>
+            <div class="project-tag">SQL</div>
+            <div class="project-tag">Visualização de Dados</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">Power BI Embedding</div>
+
+        <div class="project-content">
+          <h3>Portal Gaia de Crédito </h3>
+
+          <p>
+            Portal Único de Crédito para outros times acessarem os dados respeitando a governança e permissionamento de Dados.
+          </p>
+
+          <div class="project-tags">
+            <div class="project-tag">Power BI</div>
+            <div class="project-tag">Python/Django</div>
+            <div class="project-tag">Governança de Dados</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">Big data</div>
+
+        <div class="project-content">
+          <h3>Implementação do Serasa Limpa Nome</h3>
+
+          <p>
+            Gerenciamento de trocas de arquivos com a registradora e grande player do mercado de inadimplência.
+          </p>
+
+          <div class="project-tags">
+            <div class="project-tag">Regras de Negócios</div>
+            <div class="project-tag">Bigdata</div>
+            <div class="project-tag">Business Intelligence</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="trajetoria">
+    <h2 class="section-title">Trajetória</h2>
+
+    <p class="section-subtitle">
+      Uma transição de carreira de sucesso! Construída através de experiências com operações financeiras, comunicação e inteligência de dados.
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Stone Co.</h3>
+        <span>Gestão de Garantias • Crédito • Interoperabilidade</span>
+        <p>
+          Atuação em análises de risco, comunicação entre registradoras e construção de indicadores para operações financeiras.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Formação em Dados</h3>
+        <span>Ada Tech • Power BI • SQL • Python</span>
+        <p>
+          Desenvolvimento técnico focado em análise de dados, automação e visualização estratégica.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Secretariado Executivo como softskill na carreira em Tecnologia</h3>
+        <span>Secretariado Executivo Trilíngue + MBA em Gestão de Projetos</span>
+        <p>
+          Forte capacidade analítica combinada com comunicação estratégica e visão de negócios.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato">
+    <h2 class="section-title">Vamos conversar?</h2>
+
+    <p>
+      Estou aberta para oportunidades em análise de dados, business intelligence e projetos de visualização estratégica.
+    </p>
+
+    <div class="contact-links">
+      <a href="mailto:barbaramedeirosdarcis@gmail.com">E-mail</a>
+      <a href="https://www.linkedin.com/in/barbaradarcis/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/brbramedeiros/portfolio" target="_blank">GitHub</a>
+    </div>
+
+    <p style="margin-top: 40px; font-size: 14px;">
+      © 2026 • Bárbara Medeiros • Data Analytics Portfolio
+    </p>
+  </footer>
+
+</body>
+</html>
